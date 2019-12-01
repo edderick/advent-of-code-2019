@@ -2,17 +2,15 @@
 
 using namespace std;
 
-int main(int argc, char* argv[])
-{
+int main(int argc, char* argv[]) {
     long sum = 0; 
     long mass;
 
-    while (cin >> mass)
-    {
-        long fuel = (mass / 3) - 2;
+    while (cin >> mass) {
+        const long fuel = (mass / 3) - 2;
         sum += fuel;
-        cout << fuel << '\n'; 
+        cout << "Mass: " << mass << " => Fuel: " <<  fuel << '\n';
     }
 
-    cout << sum << '\n';
+    cout << "Total: " << sum << '\n';
 }

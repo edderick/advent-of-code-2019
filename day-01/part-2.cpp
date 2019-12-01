@@ -1,32 +1,30 @@
 #include <iostream>
-#include <algorithm>
 
 using namespace std;
 
-int main(int argc, char* argv[])
-{
+int main(int argc, char* argv[]) {
     long sum = 0; 
     long mass;
 
-    while (cin >> mass)
-    {
+    while (cin >> mass) {
         long fuel = (mass / 3) - 2;
         long fuelTotal = fuel;
         sum += fuel;
 
-        while (fuel > 0)
-        {
-            fuel = (fuel / 3) - 2;
-            if (fuel >= 0)
-            {
-                sum += fuel;
-                fuelTotal += fuel;
+        cout << "Mass: " << mass << " => Fuel: " << fuelTotal << '\n';
+
+        while (fuel > 0) {
+            long fuelCost = (fuel / 3) - 2;
+            if (fuelCost >= 0) {
+                sum += fuelCost;
+                fuelTotal += fuelCost;
             }
-            cout << "  " << fuel << '\n'; 
+            cout << "  Fuel Mass: " << fuel << " Cost: " << fuelCost << '\n';
+            fuel = fuelCost;
         }
     
-        cout << fuelTotal << '\n'; 
+        cout << "With Fuel Cost: " << fuelTotal << '\n';
     }
 
-    cout << sum << '\n';
+    cout << "Total: " << sum << '\n';
 }
